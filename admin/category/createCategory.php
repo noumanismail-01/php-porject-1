@@ -12,7 +12,7 @@ if(isset($_POST["category"])){
      </script>";
     }else{
         $path = "../upload/";
-        $imageFullname = $name . "-" .  $image;
+        $imageFullname = $name . "-". rand() . "-" .  $image;
         move_uploaded_file($_FILES["cimage"]["tmp_name"], $path . $imageFullname   );
         $query = "INSERT INTO category(c_name , c_image) VALUE('$name','$imageFullname ')";
         $res = mysqli_query($conn,$query);
