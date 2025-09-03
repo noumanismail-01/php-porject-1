@@ -1,7 +1,8 @@
 <?php
  include("includes/header.php");
- if($_SESSION["role"] != "admin"){
-    header("location: http://localhost/myweb/index.php");
+ if(empty(isset($_SESSION["role"])) && ($_SESSION["role"] != "admin")){
+    // header("location: http://localhost/myweb/index.php");
+    echo "<script>window.location.href = '/myweb/login.php'</script>";
  }
     ?>
 <main id="indexpage" class="text-light">

@@ -1,5 +1,9 @@
 <?php 
 include("../includes/header.php");
+ if(empty(isset($_SESSION["role"])) && ($_SESSION["role"] != "admin")){
+    // header("location: http://localhost/myweb/index.php");
+    echo "<script>window.location.href = '/myweb/login.php'</script>";
+ }
 include("../../includes/config.php");
 if(isset($_POST["category"])){
    $image =  $_FILES["cimage"]["name"];
@@ -10,7 +14,12 @@ if(isset($_POST["category"])){
         echo "<script>
      alert('Category alerady Exist')
      </script>";
-    }else{
+    }elseif(empty($name) || empty($image) ){
+       echo "<script>
+     alert('Fields Are Required')
+     </script>";
+    }
+    else{
         $path = "../upload/";
         $imageFullname = $name . "-". rand() . "-" .  $image;
         move_uploaded_file($_FILES["cimage"]["tmp_name"], $path . $imageFullname   );

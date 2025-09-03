@@ -11,6 +11,7 @@ if(isset($_POST["login"])){
         foreach($validate as $v){
             $_SESSION["username"] = $v["u_username"];
             $_SESSION["role"] = $v["u_role"];
+            $_SESSION["userid"] = $v["u_id"];
             if($v["u_role"] == 'user'){
                 
                 echo "<script> 
@@ -28,10 +29,10 @@ if(isset($_POST["login"])){
 
 }
 ?>
-<div id="login-page" class="row">
+<div  id="login-page" class="row">
     <div class="container mt-5 text-light border p-5 rounded-4 col-md-6">
         <h1 class="mt-2 mb-4 ">Login </h1>
-        <form class="row g-3" method="post"  >
+        <form class="row g-3" method="post" >
             <div class="col-md-12">
                 <label for="inputEmail4" class="form-label">Email</label>
                 <input type="email" name="login_email" class="form-control" id="inputEmail4">
