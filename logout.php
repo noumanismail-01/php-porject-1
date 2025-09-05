@@ -3,5 +3,5 @@ session_start();
 session_unset();
 session_destroy();
 
-header("location: http://localhost/myweb/login.php")
+echo "<script>window.location.href = '/myweb/login.php' </script>";
  ?>
