@@ -28,8 +28,6 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/myweb/admin/category/createCategory.php">Create Category</a></li>
                             <li><a class="dropdown-item" href="/myweb/admin/category/categoryList.php">Category List</a></li>
-                            <li><a class="dropdown-item" href="#">Update Category</a></li>
-                            <li><a class="dropdown-item" href="#">Delete Category</a></li>
                             
                         </ul>
                     </li>
